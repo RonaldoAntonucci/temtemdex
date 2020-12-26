@@ -4,6 +4,7 @@ import Header from '../../components/Header';
 import Text from '../../components/Text';
 import { useTemtems } from '../../hooks';
 
+import TemtemCard from './TemtemCard';
 import Styled from './styles';
 
 const Home: React.FC = () => {
@@ -18,7 +19,13 @@ const Home: React.FC = () => {
       <Styled.TemtemsList
         data={temtems}
         keyExtractor={temtem => temtem.number.toString()}
-        renderItem={({ item }) => <Text>{item.name} </Text>}
+        renderItem={({ item, index }) => (
+          <TemtemCard
+            temtem={item}
+            afterThirdCard={!!(index + 2)}
+            rightCard={!!(index % 2)}
+          />
+        )}
         numColumns={2}
       />
     </Styled.Container>
