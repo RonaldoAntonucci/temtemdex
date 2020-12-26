@@ -1,0 +1,16 @@
+import styled from 'styled-components/native';
+import { Platform } from 'react-native';
+
+import { HEADER_HEIGHT } from '../../constants';
+
+export const Container = styled.SafeAreaView``;
+
+export const Content = styled.View`
+  height: ${HEADER_HEIGHT}px;
+  padding: 0 24px;
+  padding-top: ${Platform.OS === 'android' ? '32px' : 0};
+
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+`;
