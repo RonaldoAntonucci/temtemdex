@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "temtemdex-3.0",
-    "slug": "temtemdex-3.0",
+    "name": "temtemdex",
+    "slug": "temtemdex",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
