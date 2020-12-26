@@ -1,11 +1,13 @@
 import { RectButton } from 'react-native-gesture-handler';
 import styled, { css } from 'styled-components/native';
 import { Image } from 'react-native-expo-image-cache';
+import { Animated } from 'react-native';
 
+import Text from '../../../components/Text';
 import { TemtemType } from '../../../types';
 import getColorsByTypes from '../../../util/getColorsByTypes';
 
-const Container = styled.View`
+const Container = styled(Animated.View)`
   flex: 1;
 `;
 
@@ -39,9 +41,20 @@ const Button = styled(RectButton)<ButtonProps>`
     `};
 `;
 
+const TemtemNumber = styled(Text)`
+  color: ${({ theme }) => `${theme.colors.black}30`};
+
+  position: absolute;
+  right: 10px;
+  top: 10px;
+`;
+
 const TemtemImage = styled(Image)`
   width: 72px;
   height: 72px;
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
 `;
 
-export default { Container, Button, TemtemImage };
+export default { Container, Button, TemtemImage, TemtemNumber };
