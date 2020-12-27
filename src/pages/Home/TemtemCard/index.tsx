@@ -1,4 +1,5 @@
 import React from 'react';
+import { Animated } from 'react-native';
 
 import { Temtem } from '../../../types';
 import Text from '../../../components/Text';
@@ -11,15 +12,25 @@ interface TemtemCardProps {
   temtem: Temtem;
   afterThirdCard: boolean;
   rightCard: boolean;
+  opacity: Animated.Value;
 }
 
 const TemtemCard: React.FC<TemtemCardProps> = ({
   temtem,
   afterThirdCard,
   rightCard,
+  opacity,
 }) => {
+  const containerStyle = {
+    opacity: opacity.interpolate({
+      inputRange: [0, 1],
+      outputRange: [0, 1],
+      extrapolate: 'clamp',
+    }),
+  };
+
   return (
-    <Styled.Container>
+    <Styled.Container style={containerStyle}>
       <Styled.Button
         afterThirdCard={afterThirdCard}
         rightCard={rightCard}

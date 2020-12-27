@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 
 import { TemtemsRepository } from '../repositories/tentemsRepository';
 import { Temtem } from '../types';
@@ -8,15 +8,16 @@ const temtemsRepo = new TemtemsRepository();
 interface IUseTemtems {
   temtems: Temtem[];
   isLoading: boolean;
+  loadTemtems(): Promise<void>;
 }
 
 const useTemtems = (): IUseTemtems => {
   const [temtems, setTemtems] = useState<Temtem[]>([]);
   const [isLoading, setLoading] = useState(false);
 
-  useEffect(() => {
+  const loadTemtems = useCallback(async () => {
     setLoading(true);
-    temtemsRepo
+    return temtemsRepo
       .findTentems()
       .then(data => {
         setTemtems(data);
@@ -25,7 +26,7 @@ const useTemtems = (): IUseTemtems => {
       .catch(() => setLoading(false));
   }, []);
 
-  return { temtems, isLoading };
+  return { temtems, isLoading, loadTemtems };
 };
 
 export default useTemtems;
