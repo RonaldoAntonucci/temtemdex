@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Animated } from 'react-native';
 
 import { Temtem } from '../../../types';
@@ -56,4 +56,4 @@ const TemtemCard: React.FC<TemtemCardProps> = ({
   );
 };
 
-export default TemtemCard;
+export default memo(TemtemCard);
