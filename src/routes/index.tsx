@@ -15,7 +15,7 @@ const Routes = () => {
         gestureEnabled: false,
         headerShown: false,
         cardStyle: {
-          backgroundColor: colors.white,
+          backgroundColor: colors.background,
         },
       }}
     >

@@ -28,7 +28,11 @@ const App: React.FC = () => {
 
   return (
     <NavigationContainer>
-      <StatusBar barStyle="dark-content" backgroundColor="#FFF" translucent />
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor="#FAEED9"
+        translucent
+      />
       <ThemeProvider theme={theme}>
         <Routes />
       </ThemeProvider>

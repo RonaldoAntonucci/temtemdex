@@ -9,6 +9,7 @@ export default {
     green: '#41D168',
     blue: '#0055D4',
     lilac: '#6C79DB',
+    background: '#FAEED9',
   },
   fontFamily: {
     regular: 'Inter_400Regular',

@@ -2,6 +2,7 @@ import { RectButton } from 'react-native-gesture-handler';
 import styled, { css } from 'styled-components/native';
 import { Image } from 'react-native-expo-image-cache';
 import { Animated } from 'react-native';
+import { darken } from 'polished';
 
 import Text from '../../../components/Text';
 import { TemtemType } from '../../../types';
@@ -18,7 +19,8 @@ type ButtonProps = {
 };
 
 const Button = styled(RectButton)<ButtonProps>`
-  background-color: ${props => getColorsByTypes(props.temtemTypes)[0]};
+  background-color: ${props =>
+    darken(0.1, getColorsByTypes(props.temtemTypes)[0])};
 
   position: relative;
   overflow: hidden;

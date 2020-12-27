@@ -26,7 +26,7 @@ const TemtemCard: React.FC<TemtemCardProps> = ({
         temtemTypes={temtem.types}
       >
         <Text bold>{temtem.name}</Text>
-        <Styled.TemtemNumber>{temtem.number} </Styled.TemtemNumber>
+        <Styled.TemtemNumber>#{temtem.number} </Styled.TemtemNumber>
         <Styled.TemtemImage uri={temtem.portraitWikiUrl} />
 
         <Pokeball
