@@ -7,16 +7,25 @@ const temtemsRepo = new TemtemsRepository();
 
 interface IUseTemtems {
   temtems: Temtem[];
+  isLoading: boolean;
 }
 
 const useTemtems = (): IUseTemtems => {
   const [temtems, setTemtems] = useState<Temtem[]>([]);
+  const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
-    temtemsRepo.findTentems().then(data => setTemtems(data));
+    setLoading(true);
+    temtemsRepo
+      .findTentems()
+      .then(data => {
+        setTemtems(data);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
   }, []);
 
-  return { temtems };
+  return { temtems, isLoading };
 };
 
 export default useTemtems;
