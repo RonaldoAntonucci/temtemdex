@@ -5,6 +5,7 @@ import { Feather as Icon } from '@expo/vector-icons';
 import { useTheme } from 'styled-components';
 
 import Text from '../../../components/Text';
+import Pokeball from '../../../components/Pokeball';
 
 import Styled from './styles';
 
@@ -43,6 +44,17 @@ const Header: React.FC<HeaderProps> = ({ translateY, temtemName, number }) => {
           #{number}
         </Text>
       </Animated.View>
+
+      <Pokeball
+        width={150}
+        height={150}
+        withRotate
+        style={{
+          position: 'absolute',
+          right: -32,
+          ...fadeStyle,
+        }}
+      />
     </Styled.Container>
   );
 };
