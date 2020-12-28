@@ -14,3 +14,5 @@ export const TEMTEM_TYPES_COLORS = {
   Melee: '#E2A373',
   Toxic: '#595459',
 };
+
+export const TEMTEM_SUMMARY_HEIGHT = 360;
