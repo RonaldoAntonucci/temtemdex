@@ -1,11 +1,13 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Text } from 'react-native';
+
+import Styled from './styles';
 
 const Details: React.FC = () => {
   return (
-    <View>
+    <Styled.Container>
       <Text>Details</Text>
-    </View>
+    </Styled.Container>
   );
 };
 
