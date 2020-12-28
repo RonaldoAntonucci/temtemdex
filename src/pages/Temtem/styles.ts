@@ -1,4 +1,5 @@
 import { darken } from 'polished';
+import { Animated } from 'react-native';
 import styled from 'styled-components/native';
 
 import { TemtemType } from '../../types';
@@ -16,4 +17,9 @@ const Container = styled.View<ContainerProps>`
 
 const Content = styled.View``;
 
-export default { Container, Content };
+const DetailsContainer = styled(Animated.View)`
+  flex: 1;
+  position: relative;
+`;
+
+export default { Container, Content, DetailsContainer };
