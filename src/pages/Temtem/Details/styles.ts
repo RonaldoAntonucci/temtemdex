@@ -11,8 +11,7 @@ const { height, width } = Dimensions.get('window');
 const Container = styled(Animated.View)`
   height: ${height - (Constants.statusBarHeight + HEADER_HEIGHT)}px;
   background: ${({ theme }) => theme.colors.white};
-  border-top-left-radius: 32px;
-  border-top-right-radius: 32px;
+  border-radius: 32px;
   padding: 16px 0;
 `;
 
@@ -29,7 +28,7 @@ const Tabs = styled.View`
   justify-content: space-around;
 `;
 
-export const TabButton = styled.TouchableOpacity`
+const TabButton = styled.TouchableOpacity`
   height: 24px;
   width: ${TAB_BUTTON_WIDTH}px;
 
@@ -37,9 +36,18 @@ export const TabButton = styled.TouchableOpacity`
   justify-content: center;
 `;
 
+const SelectedIndicator = styled(Animated.View)`
+  height: 2px;
+  width: ${TAB_BUTTON_WIDTH}px;
+  background: ${({ theme }) => theme.colors.blue};
+
+  position: absolute;
+  bottom: -1px;
+`;
+
 const SlideWrapper = styled.View`
   width: ${width}px;
   padding: 24px;
 `;
 
-export default { Container, Tabs, SlideWrapper, TabButton };
+export default { Container, Tabs, SlideWrapper, TabButton, SelectedIndicator };

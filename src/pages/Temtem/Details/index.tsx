@@ -5,7 +5,7 @@ import { useTheme } from 'styled-components';
 import { TEMTEM_SUMMARY_HEIGHT } from '../../../constants';
 import Text from '../../../components/Text';
 
-import { tabs } from './tabs';
+import { tabs, TAB_BUTTON_WIDTH } from './tabs';
 import Styled from './styles';
 
 type DetailsProps = {
@@ -20,6 +20,19 @@ const Details: React.FC<DetailsProps> = ({ translateY }) => {
   const scrollViewRef = useRef<ScrollView>(null);
 
   const translateX = useMemo(() => new Animated.Value(0), []);
+
+  const onScroll = Animated.event(
+    [
+      {
+        nativeEvent: {
+          contentOffset: {
+            x: translateX,
+          },
+        },
+      },
+    ],
+    { useNativeDriver: false },
+  );
 
   const handleChangeSlide = useCallback((index: number) => {
     if (scrollViewRef.current) {
@@ -41,6 +54,19 @@ const Details: React.FC<DetailsProps> = ({ translateY }) => {
       },
     ],
   };
+
+  const selectedIndicatorStyle = {
+    transform: [
+      {
+        translateX: translateX.interpolate({
+          inputRange: tabs.map((_, index) => width * index),
+          outputRange: tabs.map((_, index) => TAB_BUTTON_WIDTH * index),
+          extrapolate: 'clamp',
+        }),
+      },
+    ],
+  };
+
   return (
     <Styled.Container style={containerStyle}>
       <Styled.Tabs>
@@ -66,8 +92,29 @@ const Details: React.FC<DetailsProps> = ({ translateY }) => {
             </Styled.TabButton>
           );
         })}
+
+        <Styled.SelectedIndicator style={selectedIndicatorStyle} />
       </Styled.Tabs>
-      <Text>Details</Text>
+
+      <Styled.TabButton onPress={() => handleChangeSlide(2)}>
+        <Text>TESTE</Text>
+      </Styled.TabButton>
+
+      <Animated.ScrollView
+        ref={scrollViewRef}
+        onScroll={onScroll}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        snapToInterval={width}
+        decelerationRate="fast"
+        bounces={false}
+      >
+        {tabs.map(({ slide: Slide }, index) => (
+          <Styled.SlideWrapper key={index}>
+            <Slide />
+          </Styled.SlideWrapper>
+        ))}
+      </Animated.ScrollView>
     </Styled.Container>
   );
 };

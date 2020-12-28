@@ -1,10 +1,13 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Button } from 'react-native';
 
 const About: React.FC = () => {
+  const navigate = useNavigation();
+
   return (
     <View>
-      <Text>About</Text>
+      <Button onPress={() => navigate.goBack()} title="a" />
     </View>
   );
 };

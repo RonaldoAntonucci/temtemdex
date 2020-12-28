@@ -18,7 +18,6 @@ const Container = styled.View<ContainerProps>`
 const Content = styled.View``;
 
 const DetailsContainer = styled(Animated.View)`
-  flex: 1;
   position: relative;
 `;
 
