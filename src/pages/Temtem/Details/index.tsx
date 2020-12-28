@@ -4,17 +4,19 @@ import { useTheme } from 'styled-components';
 
 import { TEMTEM_SUMMARY_HEIGHT } from '../../../constants';
 import Text from '../../../components/Text';
+import Temtem from '../../../types/temtem';
 
 import { tabs, TAB_BUTTON_WIDTH } from './tabs';
 import Styled from './styles';
 
 type DetailsProps = {
   translateY: Animated.Value;
+  temtem: Temtem;
 };
 
 const { width } = Dimensions.get('window');
 
-const Details: React.FC<DetailsProps> = ({ translateY }) => {
+const Details: React.FC<DetailsProps> = ({ translateY, temtem }) => {
   const { colors } = useTheme();
 
   const scrollViewRef = useRef<ScrollView>(null);
@@ -96,10 +98,6 @@ const Details: React.FC<DetailsProps> = ({ translateY }) => {
         <Styled.SelectedIndicator style={selectedIndicatorStyle} />
       </Styled.Tabs>
 
-      <Styled.TabButton onPress={() => handleChangeSlide(2)}>
-        <Text>TESTE</Text>
-      </Styled.TabButton>
-
       <Animated.ScrollView
         ref={scrollViewRef}
         onScroll={onScroll}
@@ -111,7 +109,7 @@ const Details: React.FC<DetailsProps> = ({ translateY }) => {
       >
         {tabs.map(({ slide: Slide }, index) => (
           <Styled.SlideWrapper key={index}>
-            <Slide />
+            <Slide temtem={temtem} />
           </Styled.SlideWrapper>
         ))}
       </Animated.ScrollView>

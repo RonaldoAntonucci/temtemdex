@@ -30,7 +30,7 @@ const App: React.FC = () => {
     <NavigationContainer>
       <StatusBar
         barStyle="dark-content"
-        backgroundColor="#FAEED9"
+        backgroundColor={theme.colors.background}
         translucent
       />
       <ThemeProvider theme={theme}>

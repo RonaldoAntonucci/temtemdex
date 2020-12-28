@@ -1,7 +1,7 @@
 import { RectButton } from 'react-native-gesture-handler';
 import styled, { css } from 'styled-components/native';
 import { Image } from 'react-native-expo-image-cache';
-import { Animated } from 'react-native';
+import { Animated, Platform } from 'react-native';
 import { darken } from 'polished';
 
 import Text from '../../../components/Text';
@@ -28,7 +28,16 @@ const Button = styled(RectButton)<ButtonProps>`
   margin: 10px;
   padding: 16px;
   border-radius: 12px;
-  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+
+  ${Platform.OS === 'ios' &&
+  css`
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+  `}
+
+  ${Platform.OS === 'android' &&
+  css`
+    elevation: 8;
+  `}
 
   ${props =>
     props.afterThirdCard &&
