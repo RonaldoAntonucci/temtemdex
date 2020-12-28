@@ -113,7 +113,7 @@ const Temtem: React.FC = () => {
             onHandlerStateChange={onHandlerStateChanged}
           >
             <Styled.DetailsContainer style={detailsStyle}>
-              <Details />
+              <Details translateY={translateY} />
             </Styled.DetailsContainer>
           </PanGestureHandler>
         </Styled.Content>

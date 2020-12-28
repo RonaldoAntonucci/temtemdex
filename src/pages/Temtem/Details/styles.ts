@@ -4,6 +4,8 @@ import Constants from 'expo-constants';
 
 import { HEADER_HEIGHT } from '../../../constants';
 
+import { TAB_BUTTON_WIDTH } from './tabs';
+
 const { height, width } = Dimensions.get('window');
 
 const Container = styled(Animated.View)`
@@ -27,9 +29,17 @@ const Tabs = styled.View`
   justify-content: space-around;
 `;
 
+export const TabButton = styled.TouchableOpacity`
+  height: 24px;
+  width: ${TAB_BUTTON_WIDTH}px;
+
+  align-items: center;
+  justify-content: center;
+`;
+
 const SlideWrapper = styled.View`
   width: ${width}px;
   padding: 24px;
 `;
 
-export default { Container, Tabs, SlideWrapper };
+export default { Container, Tabs, SlideWrapper, TabButton };
