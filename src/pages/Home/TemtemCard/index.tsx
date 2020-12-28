@@ -1,5 +1,6 @@
-import React, { memo } from 'react';
+import React, { memo, useCallback } from 'react';
 import { Animated } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import { Temtem } from '../../../types';
 import Text from '../../../components/Text';
@@ -21,6 +22,12 @@ const TemtemCard: React.FC<TemtemCardProps> = ({
   rightCard,
   opacity,
 }) => {
+  const { navigate } = useNavigation();
+
+  const handleTemtem = useCallback(() => {
+    navigate('Temtem', { temtem });
+  }, [navigate, temtem]);
+
   const containerStyle = {
     opacity: opacity.interpolate({
       inputRange: [0, 1],
@@ -35,6 +42,7 @@ const TemtemCard: React.FC<TemtemCardProps> = ({
         afterThirdCard={afterThirdCard}
         rightCard={rightCard}
         temtemTypes={temtem.types}
+        onPress={handleTemtem}
       >
         <Text bold>{temtem.name}</Text>
         <Styled.TemtemNumber>#{temtem.number} </Styled.TemtemNumber>

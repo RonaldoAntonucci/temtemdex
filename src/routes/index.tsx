@@ -3,6 +3,7 @@ import { useTheme } from 'styled-components';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Home from '../pages/Home';
+import Temtem from '../pages/Temtem';
 
 const Stack = createStackNavigator();
 
@@ -20,6 +21,17 @@ const Routes = () => {
       }}
     >
       <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen
+        name="Temtem"
+        component={Temtem}
+        options={{
+          cardStyleInterpolator: ({ current }) => ({
+            cardStyle: {
+              opacity: current.progress,
+            },
+          }),
+        }}
+      />
     </Stack.Navigator>
   );
 };
