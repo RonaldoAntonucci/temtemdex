@@ -31,4 +31,31 @@ const SectionText = styled(Text).attrs({
   bold: true,
 })``;
 
-export default { Section, ShadowContainer, SectionText };
+const SectionTitle = styled(Text).attrs({
+  variant: 'body1',
+  bold: true,
+})`
+  margin-bottom: 8px;
+`;
+
+const SectionContent = styled.View`
+  margin-top: 16px;
+
+  flex-direction: row;
+  align-items: center;
+`;
+
+const SectionSubtitle = styled(Text).attrs({
+  color: 'grey',
+})`
+  width: 100px;
+`;
+
+export default {
+  Section,
+  ShadowContainer,
+  SectionText,
+  SectionTitle,
+  SectionContent,
+  SectionSubtitle,
+};
