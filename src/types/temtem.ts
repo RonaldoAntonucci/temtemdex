@@ -15,6 +15,17 @@ export default interface Temtem {
 
   traits: string[];
 
+  stats: {
+    hp: number;
+    sta: number;
+    spd: number;
+    atk: number;
+    def: number;
+    spatk: number;
+    spdef: number;
+    total: number;
+  };
+
   details: {
     height: {
       cm: number;

@@ -3,15 +3,11 @@ import { View } from 'react-native';
 import { Foundation as Icon } from '@expo/vector-icons';
 
 import Text from '../../../../components/Text';
-import { Temtem } from '../../../../types';
+import { SlideProps } from '../tabs';
 
 import Styled from './styles';
 
-type AboutProps = {
-  temtem: Temtem;
-};
-
-const About: React.FC<AboutProps> = ({ temtem }) => {
+const About: React.FC<SlideProps> = ({ temtem }) => {
   const formattedHeight = useMemo(() => {
     if (
       !temtem.details.height ||

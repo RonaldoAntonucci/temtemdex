@@ -11,6 +11,7 @@ export default {
     lilac: '#6C79DB',
     background: '#FFFFFF',
     background2: '#FAEED9',
+    yellow: '#EEFF02',
   },
   fontFamily: {
     regular: 'Inter_400Regular',

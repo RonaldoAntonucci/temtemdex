@@ -8,7 +8,7 @@ import Evolution from './Evolution';
 import Moves from './Moves';
 
 type SlideProps = {
-  pokemon: Temtem;
+  temtem: Temtem;
 };
 
 const tabs = [
