@@ -93,7 +93,7 @@ const Summary: React.FC<SummaryProps> = ({
     ],
   };
   return (
-    <>
+    <View>
       <Pokeball
         width={250}
         height={250}
@@ -129,7 +129,7 @@ const Summary: React.FC<SummaryProps> = ({
           <Styled.TemtemImage uri={image} />
         </Styled.TemtemImageContainer>
       </Styled.Container>
-    </>
+    </View>
   );
 };
 

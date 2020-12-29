@@ -30,7 +30,7 @@ const StatLine = styled.View`
 const StatValue = styled(Animated.View)<StatValueProps>`
   height: 3px;
   background: ${({ theme, width }) => {
-    if (width < 35) {
+    if (width < 40) {
       return theme.colors.red;
     }
     if (width < 75) {
