@@ -47,4 +47,18 @@ export default interface Temtem {
     spatk: number;
     spdef: number;
   };
+
+  evolution: {
+    stage?: number;
+    evolutionTree?: {
+      number: number;
+      name: string;
+      stage: number;
+      levels: number;
+      trading: boolean;
+      traitMapping: {};
+    }[];
+    evolves: boolean;
+    type?: string;
+  };
 }
