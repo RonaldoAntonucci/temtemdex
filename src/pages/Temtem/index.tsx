@@ -10,7 +10,7 @@ import {
 import { TEMTEM_SUMMARY_HEIGHT } from '../../constants';
 import Block from '../../components/Block';
 import Dots from '../../components/Dots';
-import useFindTemtem from '../../hooks/useFindTemtem';
+import { useFindTemtem } from '../../hooks';
 
 import Header from './Header';
 import Summary from './Summary';
