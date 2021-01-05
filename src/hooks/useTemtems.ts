@@ -1,9 +1,14 @@
 import { useCallback, useState } from 'react';
 
-import { TemtemsRepository } from '../repositories/tentemsRepository';
 import { Temtem } from '../types';
 
-const temtemsRepo = new TemtemsRepository();
+interface ITemtemsRepo {
+  findTentems(): Promise<Temtem[]>;
+}
+
+interface IUseTemtemsDTO {
+  temtemsRepo: ITemtemsRepo;
+}
 
 interface IUseTemtems {
   temtems: Temtem[];
@@ -11,7 +16,7 @@ interface IUseTemtems {
   loadTemtems(): Promise<void>;
 }
 
-const useTemtems = (): IUseTemtems => {
+const useTemtems = ({ temtemsRepo }: IUseTemtemsDTO): IUseTemtems => {
   const [temtems, setTemtems] = useState<Temtem[]>([]);
   const [isLoading, setLoading] = useState(false);
 
@@ -24,7 +29,7 @@ const useTemtems = (): IUseTemtems => {
         setLoading(false);
       })
       .catch(() => setLoading(false));
-  }, []);
+  }, [temtemsRepo]);
 
   return { temtems, isLoading, loadTemtems };
 };
