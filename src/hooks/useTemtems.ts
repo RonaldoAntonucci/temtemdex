@@ -1,5 +1,6 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useContext } from 'react';
 
+import { TemtemsContext } from '../contexts/TemtemsContext';
 import { Temtem } from '../types';
 
 interface ITemtemsRepo {
@@ -17,8 +18,16 @@ interface IUseTemtems {
 }
 
 const useTemtems = ({ temtemsRepo }: IUseTemtemsDTO): IUseTemtems => {
-  const [temtems, setTemtems] = useState<Temtem[]>([]);
-  const [isLoading, setLoading] = useState(false);
+  const context = useContext(TemtemsContext);
+
+  if (!context) {
+    throw new Error('useTemtems must be used within an TemtemsProvider.');
+  }
+
+  const {
+    isLoadingState: [isLoading, setLoading],
+    temtemsState: [temtems, setTemtems],
+  } = context;
 
   const loadTemtems = useCallback(async () => {
     setLoading(true);
@@ -29,7 +38,7 @@ const useTemtems = ({ temtemsRepo }: IUseTemtemsDTO): IUseTemtems => {
         setLoading(false);
       })
       .catch(() => setLoading(false));
-  }, [temtemsRepo]);
+  }, [setLoading, setTemtems, temtemsRepo]);
 
   return { temtems, isLoading, loadTemtems };
 };
