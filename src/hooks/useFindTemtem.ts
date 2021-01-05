@@ -14,8 +14,7 @@ const useFindTemtem = () => {
   } = context;
 
   const findTemtemByNumber = useCallback(
-    (temtemNumber: number) =>
-      temtems.filter(tem => tem.number === temtemNumber),
+    (temtemNumber: number) => temtems.find(tem => tem.number === temtemNumber),
     [temtems],
   );
 
