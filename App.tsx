@@ -10,10 +10,10 @@ import {
   Inter_700Bold,
   useFonts,
 } from '@expo-google-fonts/inter';
-import { ThemeProvider } from 'styled-components/native';
 
 import Routes from './src/routes';
 import theme from './src/styles/theme';
+import AppProvider from './src/contexts';
 
 const App: React.FC = () => {
   const [fontsLoaded] = useFonts({
@@ -33,9 +33,9 @@ const App: React.FC = () => {
         backgroundColor={theme.colors.background}
         translucent
       />
-      <ThemeProvider theme={theme}>
+      <AppProvider>
         <Routes />
-      </ThemeProvider>
+      </AppProvider>
     </NavigationContainer>
   );
 };
