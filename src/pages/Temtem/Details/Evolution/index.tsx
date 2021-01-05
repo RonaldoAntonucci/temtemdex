@@ -49,9 +49,9 @@ const Evolution: React.FC<EvolutionProps> = ({ temtem }) => {
               <>
                 <Styled.Method>
                   <Icon name="arrow-right" size={20} color={colors.grey} />
-                  <Text bold style={{ marginTop: 8 }}>
+                  {/* <Text bold style={{ marginTop: 8 }}>
                     +{evo?.levels} Levels
-                  </Text>
+                  </Text> */}
                 </Styled.Method>
 
                 <Styled.Temtem>

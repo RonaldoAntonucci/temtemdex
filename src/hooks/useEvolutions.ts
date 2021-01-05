@@ -54,10 +54,6 @@ const useEvolutions = (temtemNumber: number) => {
         formatted.push({
           name: evo.name,
           image: evo.portraitWikiUrl,
-          levels:
-            evo.evolution.evolutionTree && evo.evolution.evolutionTree[0]
-              ? evo.evolution.evolutionTree[0].levels
-              : 0,
           next: {
             name: evolutions[index + 1].name,
             image: evolutions[index + 1].portraitWikiUrl,
