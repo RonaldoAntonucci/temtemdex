@@ -25,7 +25,7 @@ const TemtemCard: React.FC<TemtemCardProps> = ({
   const { navigate } = useNavigation();
 
   const handleTemtem = useCallback(() => {
-    navigate('Temtem', { temtem });
+    navigate('Temtem', { temtemNumber: temtem.number });
   }, [navigate, temtem]);
 
   const containerStyle = {

@@ -1,16 +1,16 @@
 import { useRoute } from '@react-navigation/native';
 import React from 'react';
-import { Animated, StatusBar } from 'react-native';
+import { Alert, Animated, StatusBar, View } from 'react-native';
 import {
   PanGestureHandler,
   PanGestureHandlerStateChangeEvent,
   State,
 } from 'react-native-gesture-handler';
 
-import { Temtem as TemtemType } from '../../types';
 import { TEMTEM_SUMMARY_HEIGHT } from '../../constants';
 import Block from '../../components/Block';
 import Dots from '../../components/Dots';
+import useFindTemtem from '../../hooks/useFindTemtem';
 
 import Header from './Header';
 import Summary from './Summary';
@@ -18,13 +18,22 @@ import Details from './Details';
 import Styled from './styles';
 
 type RouteParams = {
-  temtem: TemtemType;
+  temtemNumber: number;
 };
 
 const Temtem: React.FC = () => {
   const route = useRoute();
 
-  const { temtem } = route.params as RouteParams;
+  const findTemtem = useFindTemtem();
+
+  const { temtemNumber } = route.params as RouteParams;
+
+  const temtem = findTemtem(temtemNumber);
+
+  if (!temtem) {
+    Alert.alert('Temtem loading error', 'Try again later.');
+    return <View />;
+  }
 
   const translateY = new Animated.Value(0);
 
