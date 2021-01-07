@@ -1,4 +1,4 @@
-import { TemtemType } from '.';
+import { Technique, TemtemType } from '.';
 
 export default interface Temtem {
   number: number;
@@ -61,4 +61,6 @@ export default interface Temtem {
     evolves: boolean;
     type?: string;
   };
+
+  techniques: Technique[];
 }
