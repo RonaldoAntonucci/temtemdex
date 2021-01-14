@@ -1,34 +1,42 @@
 import styled from 'styled-components/native';
-import { Animated } from 'react-native';
+import { Animated, Dimensions } from 'react-native';
 import { Image } from 'react-native-expo-image-cache';
 
 import { TEMTEM_SUMMARY_HEIGHT } from '../../../constants';
 
-const Container = styled(Animated.View)`
+const { width } = Dimensions.get('screen');
+
+export const ScrollContainer = styled.ScrollView``;
+
+export const ScrollContent = styled.View`
+  width: ${width + 100}px;
+  padding-left: 50px;
+  padding-right: 50px;
+`;
+
+export const Container = styled(Animated.View)`
   height: ${TEMTEM_SUMMARY_HEIGHT}px;
 `;
 
-const Header = styled.View`
+export const Header = styled.View`
   flex: 1;
   padding: 0 24px;
 `;
 
-const Row = styled.View`
+export const Row = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 `;
 
-const TemtemImageContainer = styled(Animated.View)`
+export const TemtemImageContainer = styled(Animated.View)`
   margin-top: 24px;
 
   align-items: center;
 `;
 
-const TemtemImage = styled(Image)`
+export const TemtemImage = styled(Image)`
   width: 256px;
   height: 256px;
   border-radius: 128px;
 `;
-
-export default { Container, Header, Row, TemtemImageContainer, TemtemImage };

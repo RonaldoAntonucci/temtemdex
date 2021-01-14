@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo, useRef } from 'react';
-import { Animated, Dimensions, ScrollView } from 'react-native';
+import { Animated, ScrollView, useWindowDimensions } from 'react-native';
 import { useTheme } from 'styled-components';
 
 import { TEMTEM_SUMMARY_HEIGHT } from '../../../constants';
@@ -14,10 +14,10 @@ type DetailsProps = {
   temtem: Temtem;
 };
 
-const { width } = Dimensions.get('window');
-
 const Details: React.FC<DetailsProps> = ({ translateY, temtem }) => {
   const { colors } = useTheme();
+
+  const { width } = useWindowDimensions();
 
   const scrollViewRef = useRef<ScrollView>(null);
 
@@ -36,14 +36,17 @@ const Details: React.FC<DetailsProps> = ({ translateY, temtem }) => {
     { useNativeDriver: false },
   );
 
-  const handleChangeSlide = useCallback((index: number) => {
-    if (scrollViewRef.current) {
-      scrollViewRef.current.scrollTo({
-        x: width * index,
-        animated: true,
-      });
-    }
-  }, []);
+  const handleChangeSlide = useCallback(
+    (index: number) => {
+      if (scrollViewRef.current) {
+        scrollViewRef.current.scrollTo({
+          x: width * index,
+          animated: true,
+        });
+      }
+    },
+    [width],
+  );
 
   const containerStyle = {
     transform: [
