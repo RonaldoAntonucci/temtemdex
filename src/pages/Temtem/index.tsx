@@ -1,5 +1,5 @@
 import { useRoute } from '@react-navigation/native';
-import React from 'react';
+import React, { useState } from 'react';
 import { Alert, Animated, StatusBar, View } from 'react-native';
 import {
   PanGestureHandler,
@@ -23,6 +23,7 @@ type RouteParams = {
 
 const Temtem: React.FC = () => {
   const route = useRoute();
+  const [detailsOpen, setDetailsOpen] = useState(false);
 
   const findTemtem = useFindTemtem();
 
@@ -56,8 +57,10 @@ const Temtem: React.FC = () => {
 
       if (translationY < -100) {
         opened = true;
+        setDetailsOpen(true);
       } else {
         opened = false;
+        setDetailsOpen(false);
         translateY.flattenOffset();
       }
 
@@ -121,7 +124,10 @@ const Temtem: React.FC = () => {
             onGestureEvent={animatedEvent}
             onHandlerStateChange={onHandlerStateChanged}
           >
-            <Styled.DetailsContainer style={detailsStyle}>
+            <Styled.DetailsContainer
+              style={detailsStyle}
+              detailsOpen={detailsOpen}
+            >
               <Details translateY={translateY} temtem={temtem} />
             </Styled.DetailsContainer>
           </PanGestureHandler>

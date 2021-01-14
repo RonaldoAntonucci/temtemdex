@@ -9,6 +9,10 @@ type ContainerProps = {
   temtemTypes: TemtemType[];
 };
 
+type DetailsContainer = {
+  detailsOpen: boolean;
+};
+
 const Container = styled.View<ContainerProps>`
   background-color: ${props =>
     darken(0.1, getColorsByTypes(props.temtemTypes)[0])};
@@ -17,8 +21,9 @@ const Container = styled.View<ContainerProps>`
 
 const Content = styled.View``;
 
-const DetailsContainer = styled(Animated.View)`
+const DetailsContainer = styled(Animated.View)<DetailsContainer>`
   position: relative;
+  z-index: ${props => (props.detailsOpen ? 3 : 1)};
 `;
 
 export default { Container, Content, DetailsContainer };
