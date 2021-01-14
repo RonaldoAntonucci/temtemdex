@@ -6,7 +6,9 @@ import { TEMTEM_SUMMARY_HEIGHT } from '../../../constants';
 
 const { width } = Dimensions.get('screen');
 
-export const ScrollContainer = styled.ScrollView``;
+export const ScrollContainer = styled.ScrollView`
+  z-index: 2;
+`;
 
 export const ScrollContent = styled.View`
   width: ${width + 100}px;
