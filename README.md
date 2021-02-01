@@ -41,7 +41,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 ## Começando
 ``` bash
   # Clonar o projeto:
-  $ https://github.com/RonaldoAntonucci/temtemdex
+  $ https://github.com/RonaldoAntonucci/temtemdex.git
 
   # Entrar no diretório:
   $ cd temtemdex
