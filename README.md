@@ -2,13 +2,6 @@
   <img alt="Pokedex" src="https://upload.wikimedia.org/wikipedia/en/6/64/Temtem_logo_2020.png" width="250px" />
 </h1>
 
-<p align="center">
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/MatheusPires99/pokedex">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/MatheusPires99/pokedex">
-  <img alt="Stars" src="https://img.shields.io/github/stars/MatheusPires99/pokedex">
-  <img alt="Repository Size" src="https://img.shields.io/github/repo-size/MatheusPires99/pokedex">
-</p>
-
 ## Sobre
 Este repositório contém o código da TemtemDex
 
@@ -41,7 +34,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 ## Começando
 ``` bash
   # Clonar o projeto:
-  $ https://github.com/MatheusPires99/pokedex
+  $ https://github.com/RonaldoAntonucci/temtemdex
 
   # Entrar no diretório:
   $ cd temtemdex-3.0
