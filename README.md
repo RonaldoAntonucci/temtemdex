@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="Pokedex" src="https://upload.wikimedia.org/wikipedia/en/6/64/Temtem_logo_2020.png" width="250px" />
+  <img alt="Temtem" src="https://upload.wikimedia.org/wikipedia/en/6/64/Temtem_logo_2020.png" width="250px" />
 </h1>
 
 <p align="center">
@@ -10,7 +10,8 @@
 </p>
 
 <h1 align="center">
-  <img alt="TemtemDex" src="https://res.cloudinary.com/dtf7agnso/image/upload/v1612203643/Screen_Recording_20210201-151705_temtemdex_1_n16qki.gif" width="400" />
+  <img alt="Home" src="https://res.cloudinary.com/dtf7agnso/image/upload/v1612203643/Screen_Recording_20210201-151705_temtemdex_1_n16qki.gif" width="400" />
+   <img alt="Temtem" src="https://res.cloudinary.com/dtf7agnso/image/upload/v1612204537/Screen_Recording_20210201-153443_temtemdex_1_t7aqqs.gif" width="400" />
 </h1>
 
 ## Sobre
