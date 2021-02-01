@@ -37,7 +37,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
   $ https://github.com/RonaldoAntonucci/temtemdex
 
   # Entrar no diretório:
-  $ cd temtemdex-3.0
+  $ cd temtemdex
   
   # Instalar as dependências:
   $ yarn
