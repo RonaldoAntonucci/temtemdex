@@ -9,11 +9,17 @@
   <img alt="Repository Size" src="https://img.shields.io/github/repo-size/RonaldoAntonucci/temtemdex">
 </p>
 
+<h1 align="center">
+  <img alt="TemtemDex" src="https://res.cloudinary.com/dtf7agnso/image/upload/v1612203643/Screen_Recording_20210201-151705_temtemdex_1_n16qki.gif" width="400" />
+</h1>
+
 ## Sobre
 Este repositório contém o código da TemtemDex
 
 A TemtemDex possibilita a listagem de Temtems, assim como a seleção e exibição de seus detalhes.
 Os dados dos temtems são pegos da <a href="https://temtem-api.mael.tech/">Temtem Api</a>
+
+<b>[Temtem](https://crema.gg/games/temtem/) é um jogo inspirado na franquia Pokémon.</b>
 
 <b>obs1: Alguns dados dos temtems estão faltando pois não constam na api.<br></b>
 <b>obs2: Foi desenvolvido utilizando o sistema Android, então podem ocorrer bugs no IOS (Não tenho acesso a um iphone para verificar).</b>
@@ -48,6 +54,8 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
   
   # Instalar as dependências:
   $ yarn
+
+  # Iniciar a aplicação:
   $ yarn start
 ```
 
