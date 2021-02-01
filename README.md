@@ -2,6 +2,13 @@
   <img alt="Pokedex" src="https://upload.wikimedia.org/wikipedia/en/6/64/Temtem_logo_2020.png" width="250px" />
 </h1>
 
+<p align="center">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/RonaldoAntonucci/temtemdex">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/RonaldoAntonucci/temtemdex">
+  <img alt="Stars" src="https://img.shields.io/github/stars/RonaldoAntonucci/temtemdex">
+  <img alt="Repository Size" src="https://img.shields.io/github/repo-size/RonaldoAntonucci/temtemdex">
+</p>
+
 ## Sobre
 Este repositório contém o código da TemtemDex
 
